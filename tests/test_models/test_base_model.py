@@ -37,7 +37,7 @@ class test_basemodel(unittest.TestCase):
         h = self.value()
         copy = h.to_dict()
         new = BaseModel(**copy)
-        self.assertFalse(new is i)
+        self.assertFalse(new is h)
 
     def test_kwargs_int(self):
         """ """
