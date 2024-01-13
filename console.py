@@ -14,7 +14,6 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """ Contains functionality for the HBNB"""
 
-    # determines prompt for interactive/non-interactive modes
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
 
      classes = {
