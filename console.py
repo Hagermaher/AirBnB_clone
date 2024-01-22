@@ -16,7 +16,7 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
 
-     classes = {
+    classes = {
                'BaseModel': BaseModel, 'User': User, 'Place': Place,
                'State': State, 'City': City, 'Amenity': Amenity,
                'Review': Review
@@ -33,7 +33,7 @@ class HBNBCommand(cmd.Cmd):
         if not sys.__stdin__.isatty():
             print('(hbnb)')
 
-     def precmd(self, line):
+    def precmd(self, line):
         """Reformat command
 
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints documentation"""
         print("Exits the program with formatting\n")
 
-     def do_EOF(self, arg):
+    def do_EOF(self, arg):
         """ Handle to exit"""
         print()
         exit()
@@ -100,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
         """ Override emptyline method"""
         pass
 
-     def do_create(self, args):
+    def do_create(self, args):
         """ Create an object of class"""
         if not args:
             print("** class name missing **")
@@ -145,7 +145,7 @@ class HBNBCommand(cmd.Cmd):
         except KeyError:
             print("** no instance found **")
 
-     def help_show(self):
+    def help_show(self):
         """ Help information to show command"""
         print("Shows an individual instance of a class")
         print("[Usage]: show <className> <objectId>\n")
@@ -177,7 +177,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
         except KeyError:
             print("** no instance found **")
-     def help_destroy(self):
+    def help_destroy(self):
         """ Help instruction  for destroy command"""
         print("Destroys an individual instance of a class")
         print("[Usage]: destroy <className> <objectId>\n")
@@ -213,7 +213,7 @@ class HBNBCommand(cmd.Cmd):
                 cnt += 1
         print(cnt)
 
-     def help_count(self):
+    def help_count(self):
         """ """
         print("Usage: count <class_name>")
 
